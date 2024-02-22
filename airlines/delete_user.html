@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete User</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("plane_login.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0;
+        color: #333;
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .navbar {
+        background-color: #283747;
+        overflow: hidden;
+        position: fixed; /* Set the navbar to a fixed position at the top */
+        width: 100%; /* Full width */
+        top: 0; /* Position it at the top of the page */
+      }
+
+      /* Style the navbar links */
+      .navbar a {
+        float: left;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Change the color of navbar links on hover */
+      .navbar a:hover {
+        background-color: #00cc99;
+        color: #fff;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      .delete-icon {
+        font-size: 50px;
+        color: #ff6e6e;
+        margin-top: 20px; /* Adjust top margin as needed */
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        opacity: 0.9;
+        text-align: left;
+      }
+
+      label,
+      input[type="text"],
+      input[type="password"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      label[for="username"] {
+        color: #000;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+        background-color: #00cc99;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .emojis {
+        font-size: 24px;
+        color: #ff6e6e;
+      }
+
+      .navbar-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 20px; /* Adjust top margin as needed */
+      }
+    </style>
+    <script>
+      function confirmDelete() {
+        var confirmation = confirm(
+          "Are you sure you want to delete your account? We are sorry to let you go."
+        );
+
+        alert("User deleted successfully");
+      }
+      return confirmation;
+    </script>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="home.php">Home</a>
+      <a href="flight.php">View Flights</a>
+      <a href="login.php">Login</a>
+      <a href="about_us.php">About Us</a>
+    </div>
+
+    <h2>Delete User</h2>
+
+    <div class="delete-icon">&#128465;</div>
+
+    <form action="delete_user.php" method="POST">
+      <label for="username" style="color: black">Username</label>
+      <input type="text" name="username" required />
+
+      <input
+        type="submit"
+        value="Delete User"
+        onclick="return confirmDelete();"
+      />
+    </form>
+
+    <div id="emojis" class="emojis"></div>
+    <a href="home.php" class="navbar-button">Back Home</a>
+  </body>
+</html>
