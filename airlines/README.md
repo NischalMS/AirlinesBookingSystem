@@ -1,1 +1,1 @@
-5th Semester DBMS Project
+5th Semester Project
